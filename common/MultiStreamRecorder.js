@@ -121,3 +121,6 @@ function MultiStreamRecorder(mediaStream) {
     var audioVideoBlobs = {};
     var recordingInterval = 0;
 }
+
+module.exports = module.exports || {};
+module.exports.MultiStreamRecorder = MultiStreamRecorder;

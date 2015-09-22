@@ -137,6 +137,8 @@ function MediaStreamRecorder(mediaStream) {
     var mediaRecorder;
 }
 
+module.exports = module.exports || {};
+module.exports.MediaStreamRecorder = MediaStreamRecorder;
 // ______________________
 // MultiStreamRecorder.js
 
@@ -261,6 +263,8 @@ function MultiStreamRecorder(mediaStream) {
     var recordingInterval = 0;
 }
 
+module.exports = module.exports || {};
+module.exports.MultiStreamRecorder = MultiStreamRecorder;
 // _____________________________
 // Cross-Browser-Declarations.js
 
@@ -282,11 +286,11 @@ if (typeof URL !== 'undefined' && typeof webkitURL !== 'undefined') {
     var URL = webkitURL;
 }
 
-var IsEdge = navigator && navigator.userAgent.indexOf('Edge') !== -1 && (!!navigator.msSaveBlob || !!navigator.msSaveOrOpenBlob);
-var IsOpera = navigator && (!!window.opera || navigator.userAgent.indexOf('OPR/') !== -1);
-var IsChrome = !navigator || (!IsEdge && !!navigator.webkitGetUserMedia);
-
 if (typeof navigator !== 'undefined') {
+    var IsEdge = navigator.userAgent.indexOf('Edge') !== -1 && (!!navigator.msSaveBlob || !!navigator.msSaveOrOpenBlob);
+    var IsOpera = !!window.opera || navigator.userAgent.indexOf('OPR/') !== -1;
+    var IsChrome = !IsEdge && !IsEdge && !!navigator.webkitGetUserMedia;
+  
     if (typeof navigator.webkitGetUserMedia !== 'undefined') {
         navigator.getUserMedia = navigator.webkitGetUserMedia;
     }

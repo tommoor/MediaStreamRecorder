@@ -19,11 +19,11 @@ if (typeof URL !== 'undefined' && typeof webkitURL !== 'undefined') {
     var URL = webkitURL;
 }
 
-var IsEdge = navigator.userAgent.indexOf('Edge') !== -1 && (!!navigator.msSaveBlob || !!navigator.msSaveOrOpenBlob);
-var IsOpera = !!window.opera || navigator.userAgent.indexOf('OPR/') !== -1;
-var IsChrome = !IsEdge && !IsEdge && !!navigator.webkitGetUserMedia;
-
 if (typeof navigator !== 'undefined') {
+    var IsEdge = navigator.userAgent.indexOf('Edge') !== -1 && (!!navigator.msSaveBlob || !!navigator.msSaveOrOpenBlob);
+    var IsOpera = !!window.opera || navigator.userAgent.indexOf('OPR/') !== -1;
+    var IsChrome = !IsEdge && !IsEdge && !!navigator.webkitGetUserMedia;
+
     if (typeof navigator.webkitGetUserMedia !== 'undefined') {
         navigator.getUserMedia = navigator.webkitGetUserMedia;
     }

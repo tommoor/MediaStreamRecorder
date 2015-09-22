@@ -105,3 +105,6 @@ function MediaStreamRecorder(mediaStream) {
     // Reference to "MediaRecorder.js"
     var mediaRecorder;
 }
+
+module.exports = module.exports || {};
+module.exports.MediaStreamRecorder = MediaStreamRecorder;
