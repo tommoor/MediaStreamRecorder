@@ -282,9 +282,9 @@ if (typeof URL !== 'undefined' && typeof webkitURL !== 'undefined') {
     var URL = webkitURL;
 }
 
-var IsEdge = navigator.userAgent.indexOf('Edge') !== -1 && (!!navigator.msSaveBlob || !!navigator.msSaveOrOpenBlob);
-var IsOpera = !!window.opera || navigator.userAgent.indexOf('OPR/') !== -1;
-var IsChrome = !IsEdge && !IsEdge && !!navigator.webkitGetUserMedia;
+var IsEdge = navigator && navigator.userAgent.indexOf('Edge') !== -1 && (!!navigator.msSaveBlob || !!navigator.msSaveOrOpenBlob);
+var IsOpera = navigator && (!!window.opera || navigator.userAgent.indexOf('OPR/') !== -1);
+var IsChrome = !navigator || (!IsEdge && !!navigator.webkitGetUserMedia);
 
 if (typeof navigator !== 'undefined') {
     if (typeof navigator.webkitGetUserMedia !== 'undefined') {
